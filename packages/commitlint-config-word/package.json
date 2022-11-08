@@ -1,0 +1,13 @@
+{
+  "name": "commitlint-config-eword",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@commitlint/config-conventional": "^17",
+    "commitlint-config-squash-pr": "^1"
+  }
+}

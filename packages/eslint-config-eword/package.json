@@ -1,0 +1,22 @@
+{
+  "name": "eslint-config-eword",
+  "version": "0.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "eslint": "^8",
+    "eslint-config-prettier": "^8",
+    "eslint-plugin-react": "7",
+    "eslint-config-standard": "latest",
+    "eslint-config-turbo": "latest",
+    "eslint-plugin-import": "^2",
+    "eslint-plugin-n": "^15",
+    "eslint-plugin-promise": "^6"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
