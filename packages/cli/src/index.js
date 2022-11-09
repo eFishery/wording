@@ -17,7 +17,7 @@ const main = async () => {
     .action(async (command, opts) => {
       if (command === 'pull') {
         if (!opts.spreadsheetId) {
-          logErrAndExit('\'--spreadsheet-id\' is required')
+          logErrAndExit("'--spreadsheet-id' is required")
         }
         try {
           const jsonData = await getJsonI18nFromSheet(opts.spreadsheetId)
