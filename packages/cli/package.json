@@ -1,5 +1,5 @@
 {
-  "name": "cli",
+  "name": "@efishery/eword-cli",
   "description": "a cli tool to generate i18n json file from googlesheet",
   "version": "1.0.0",
   "main": "src/index.js",
