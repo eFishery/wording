@@ -1,0 +1,38 @@
+{
+  "name": "i18n.macro",
+  "description": "Allows to translate at compile-time.",
+  "authors": [
+    "r17x <hi@rin.rocks>"
+  ],
+  "homepage": "https://github.com/eFishery/wording/tree/main/packages/i18n.macro",
+  "repository": "https://github.com/eFishery/wording/tree/main/packages/i18n.macro",
+  "version": "0.0.0",
+  "keywords": [
+    "babel-plugin-macros",
+    "i18n"
+  ],
+  "main": "src/i18n.macro.js",
+  "files": [
+    "src/i18n.macro.js",
+    "src/utils.js"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint",
+    "test": "jest"
+  },
+  "peerDependencies": {
+    "babel-plugin-macros": "^2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7",
+    "babel-plugin-macros": "^3",
+    "babel-plugin-tester": "^10",
+    "mdast-util-from-markdown": "^1",
+    "mdast-util-heading-range": "^3",
+    "remark": "^14",
+    "remark-gfm": "^3",
+    "remark-prettier": "^2",
+    "unist-builder": "^3"
+  }
+}
