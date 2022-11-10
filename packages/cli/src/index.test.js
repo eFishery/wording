@@ -1,6 +1,36 @@
 const { exec } = require('child_process');
-const { existsSync } = require('fs');
+const { readFileSync } = require('fs');
 const path = require('path');
+
+const expectedData = {
+  id: {
+    daysAgo: 'hari yang lalu',
+    heartRate: 'detak jantung',
+    exercise: 'latihan',
+    hello: 'halo',
+    walking: 'berjalan',
+    sleep: 'tidur',
+    messageWarningWorkout: 'Udah jarang nih kamu lari pagi, sekarang yuk!',
+  },
+  en: {
+    daysAgo: 'days ago',
+    heartRate: 'heart rate',
+    exercise: 'exercise',
+    hello: 'hello',
+    walking: 'walking',
+    sleep: 'sleep',
+    messageWarningWorkout: 'You haven’t checked out the app recently. Do some workouts.',
+  },
+  thai: {
+    daysAgo: 'วันที่ผ่านมา',
+    heartRate: 'หัวใจ',
+    exercise: 'ออกกำลังกาย',
+    hello: 'สวัสดี',
+    walking: 'ที่เดิน',
+    sleep: 'นอน',
+    messageWarningWorkout: 'คุณยังไม่ได้ตรวจสอบแอปเมื่อเร็วๆ นี้ ออกกำลังกายบ้าง.',
+  },
+};
 
 describe('Generate i18n json Test', () => {
   const execAsync = async (cmd) => {
@@ -22,6 +52,6 @@ describe('Generate i18n json Test', () => {
     const outputFilename = 'test-data.json';
     const outputFilePath = path.join(__dirname, '..', outputFilename);
     await execAsync(`node ${indexFilePath} pull --spreadsheet-id ${id} --out ${outputFilename}`);
-    expect(existsSync(outputFilePath)).toEqual(true);
+    expect(JSON.parse(readFileSync(outputFilePath, 'utf-8'))).toEqual(expectedData);
   });
 });
