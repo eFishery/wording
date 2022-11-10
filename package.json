@@ -25,7 +25,6 @@
     "test": "turbo run test",
     "format": "prettier --write --ignore-unknown",
     "commit": "git-cz",
-    "prerelease": "yarn build",
     "release": "multi-semantic-release"
   },
   "config": {
