@@ -14,7 +14,8 @@
   },
   "workspaces": [
     "tooling/**",
-    "packages/*"
+    "packages/*",
+    "!tooling/config/*"
   ],
   "scripts": {
     "prepare": "husky install",
