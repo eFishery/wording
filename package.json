@@ -2,7 +2,18 @@
   "name": "wordspaces",
   "version": "0.0.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/efishery/wording.git"
+  },
+  "bugs": {
+    "url": "https://github.com/efishery/wording/issues"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
   "workspaces": [
+    "tooling/**",
     "packages/*"
   ],
   "scripts": {
@@ -11,7 +22,15 @@
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
     "test": "turbo run test",
-    "format": "prettier --write --ignore-unknown"
+    "format": "prettier --write --ignore-unknown",
+    "commit": "git-cz",
+    "prerelease": "yarn build",
+    "release": "multi-semantic-release"
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/prompt"
+    }
   },
   "prettier": {
     "endOfLine": "auto",
@@ -31,6 +50,9 @@
       "eword"
     ]
   },
+  "release": {
+    "extends": "msr-config-eword"
+  },
   "lint-staged": {
     "*": "prettier --ignore-unknown --write",
     "*.js": [
@@ -46,21 +68,21 @@
       "/node_modules/"
     ]
   },
+  "dependencies": {},
+  "packageManager": "yarn@1.22.19",
   "devDependencies": {
     "@commitlint/cli": "^17",
     "@commitlint/prompt": "^17",
+    "commitizen": "^4.2.5",
     "commitlint-config-eword": "*",
     "cross-env": "^7",
     "eslint-config-eword": "*",
     "husky": "^8",
     "jest": "^29",
     "lint-staged": "^13",
+    "msr-config-eword": "*",
+    "multi-semantic-release": "^3",
     "prettier": "^2",
     "turbo": "^1"
-  },
-  "engines": {
-    "node": ">=14.0.0"
-  },
-  "dependencies": {},
-  "packageManager": "yarn@1.22.19"
+  }
 }
