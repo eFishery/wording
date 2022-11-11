@@ -24,9 +24,6 @@
     "root": true,
     "extends": [
       "eword"
-    ],
-    "ignorePatterns": [
-      "**/*.test.js"
     ]
   },
   "commitlint": {
